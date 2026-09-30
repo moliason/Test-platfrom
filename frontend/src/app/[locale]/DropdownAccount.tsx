@@ -1,0 +1,111 @@
+'use client';
+import { Button, DropdownTrigger, Dropdown, DropdownMenu, DropdownItem } from '@heroui/react';
+import { ChevronDown, ArrowRightFromLine, ArrowRightToLine, Settings } from 'lucide-react';
+import { useContext } from 'react';
+import { TokenContext } from '@/utils/TokenProvider';
+import { useRouter } from '@/src/i18n/routing';
+import { AccountDropDownMessages } from '@/types/user';
+import UserAvatar from '@/components/UserAvatar';
+import { confirmFormNavigation } from '@/utils/formGuard';
+
+type Props = {
+  messages: AccountDropDownMessages;
+  locale: string;
+  onItemPress: () => void;
+};
+
+export default function DropdownAccount({ messages, locale, onItemPress }: Props) {
+  const router = useRouter();
+  const context = useContext(TokenContext);
+
+  const signOut = () => {
+    if (!confirmFormNavigation()) return;
+    context.setToken({
+      access_token: '',
+      expires_at: 0,
+      user: null,
+    });
+    context.removeTokenFromLocalStorage();
+    router.push(`/account/signin`, { locale: locale });
+  };
+
+  const signinItems = [
+    {
+      uid: 'account',
+      title: messages.account,
+      icon: (
+        <UserAvatar size={16} username={context.token?.user?.username} avatarPath={context.token?.user?.avatarPath} />
+      ),
+      onPress: () => {
+        if (!confirmFormNavigation()) return;
+        router.push('/account', { locale: locale });
+        onItemPress();
+      },
+    },
+    {
+      uid: 'profile',
+      title: messages.profileSettings,
+      icon: <Settings size={16} />,
+      onPress: () => {
+        if (!confirmFormNavigation()) return;
+        router.push('/account/settings', { locale: locale });
+        onItemPress();
+      },
+    },
+    {
+      uid: 'signout',
+      title: messages.signOut,
+      icon: <ArrowRightFromLine size={16} />,
+      onPress: () => {
+        signOut();
+        onItemPress();
+      },
+    },
+  ];
+
+  const signoutItems = [
+    {
+      uid: 'signin',
+      title: messages.signIn,
+      icon: <ArrowRightToLine size={16} />,
+      onPress: () => {
+        router.push('/account/signin', { locale: locale });
+        onItemPress();
+      },
+    },
+  ];
+
+  return (
+    <Dropdown>
+      <DropdownTrigger>
+        <Button
+          size="sm"
+          variant="light"
+          startContent={
+            <UserAvatar
+              size={16}
+              username={context.token?.user?.username}
+              avatarPath={context.token?.user?.avatarPath}
+            />
+          }
+          endContent={<ChevronDown size={16} />}
+        >
+          {context.isSignedIn() ? context.token?.user?.username : messages.signIn}
+        </Button>
+      </DropdownTrigger>
+      {context.isSignedIn() ? (
+        <DropdownMenu aria-label="account actions when sign in">
+          {signinItems.map((entry) => (
+            <DropdownItem key={entry.uid} title={entry.title} startContent={entry.icon} onPress={entry.onPress} />
+          ))}
+        </DropdownMenu>
+      ) : (
+        <DropdownMenu aria-label="account actions when sign out">
+          {signoutItems.map((entry) => (
+            <DropdownItem key={entry.uid} title={entry.title} startContent={entry.icon} onPress={entry.onPress} />
+          ))}
+        </DropdownMenu>
+      )}
+    </Dropdown>
+  );
+}

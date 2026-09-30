@@ -1,0 +1,45 @@
+export async function up(queryInterface, Sequelize) {
+  await queryInterface.changeColumn('cases', 'description', {
+    type: Sequelize.TEXT,
+    allowNull: true,
+  });
+  await queryInterface.changeColumn('cases', 'preConditions', {
+    type: Sequelize.TEXT,
+    allowNull: true,
+  });
+  await queryInterface.changeColumn('cases', 'expectedResults', {
+    type: Sequelize.TEXT,
+    allowNull: true,
+  });
+  await queryInterface.changeColumn('steps', 'step', {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  });
+  await queryInterface.changeColumn('steps', 'result', {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  });
+}
+
+export async function down(queryInterface, Sequelize) {
+  await queryInterface.changeColumn('cases', 'description', {
+    type: Sequelize.STRING,
+    allowNull: true,
+  });
+  await queryInterface.changeColumn('cases', 'preConditions', {
+    type: Sequelize.STRING,
+    allowNull: true,
+  });
+  await queryInterface.changeColumn('cases', 'expectedResults', {
+    type: Sequelize.STRING,
+    allowNull: true,
+  });
+  await queryInterface.changeColumn('steps', 'step', {
+    type: Sequelize.STRING,
+    allowNull: false,
+  });
+  await queryInterface.changeColumn('steps', 'result', {
+    type: Sequelize.STRING,
+    allowNull: false,
+  });
+}

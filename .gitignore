@@ -1,0 +1,17 @@
+node_modules/
+coverage/
+.env
+*.log
+.env.*
+!.env.example
+!.env.sample
+database.sqlite
+/test-results/
+/playwright-report/
+/playwright-screenshots/
+/blob-report/
+/playwright/.cache/
+.DS_Store
+/.idea/
+.claude/
+openspec/

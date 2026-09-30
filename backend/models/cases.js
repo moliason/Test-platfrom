@@ -1,0 +1,78 @@
+function defineCase(sequelize, DataTypes) {
+  const Case = sequelize.define(
+    'Case',
+    {
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      state: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      caseNo: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      priority: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      type: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      automationStatus: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
+      template: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      preConditions: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
+      expectedResults: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
+      folderId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'folder',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
+    },
+    { tableName: 'cases' }
+  );
+
+  Case.associate = (models) => {
+    Case.belongsTo(models.Folder, {
+      foreignKey: 'folderId',
+      onDelete: 'CASCADE',
+    });
+    Case.belongsToMany(models.Step, {
+      through: 'caseSteps',
+      foreignKey: 'caseId',
+      otherKey: 'stepId',
+    });
+    Case.belongsToMany(models.Tags, {
+      through: 'caseTags',
+      foreignKey: 'caseId',
+      otherKey: 'tagId',
+    });
+  };
+
+  return Case;
+}
+
+export default defineCase;

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.run-case-selector input[type='checkbox'] + span,
+.test-case-table input[type='checkbox'] + span,
+.run-case-selector input[type='checkbox'] + span::after,
+.test-case-table input[type='checkbox'] + span::after,
+.run-case-selector input[type='checkbox'] + span > svg,
+.test-case-table input[type='checkbox'] + span > svg {
+  transition-duration: 80ms !important;
+}

@@ -1,0 +1,35 @@
+function defineMember(sequelize, DataTypes) {
+  const Member = sequelize.define(
+    'Member',
+    {
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      projectId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      role: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+    },
+    { tableName: 'members' }
+  );
+
+  Member.associate = (models) => {
+    Member.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE',
+    });
+    Member.belongsTo(models.Project, {
+      foreignKey: 'projectId',
+      onDelete: 'CASCADE',
+    });
+  };
+
+  return Member;
+}
+
+export default defineMember;

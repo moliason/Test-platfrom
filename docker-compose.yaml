@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-unittcms}
+      - POSTGRES_USER=${POSTGRES_USER:-unittcms}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-unittcms}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  unittcms:
+    image: unittcms:latest
+    build:
+      context: .
+      args:
+        - NODE_IMAGE=${NODE_IMAGE:-node:20-alpine}
+        - API_PATH=${API_PATH:-/api}
+        - NEXT_PUBLIC_TEST_TYPES=${TEST_TYPES:-功能,性能,健壮性,稳定性}
+    ports:
+      - '8000:8000'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - PORT=8000
+      - SECRET_KEY=your_secret_key_here
+      - IS_DEMO=false # set to true to seed the database
+      - API_PATH=${API_PATH:-/api}
+      - FRONTEND_ORIGIN=${FRONTEND_ORIGIN:-http://localhost:8000}
+      - OIDC_ISSUER=${OIDC_ISSUER}
+      - OIDC_CLIENT_ID=${OIDC_CLIENT_ID}
+      - OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET}
+      - DATABASE_URL=postgres://${POSTGRES_USER:-unittcms}:${POSTGRES_PASSWORD:-unittcms}@postgres:5432/${POSTGRES_DB:-unittcms}
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin666}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-666666}
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-admin666@local}
+      - TEST_TYPES=${TEST_TYPES:-功能,性能,健壮性,稳定性}
+      - NEXT_PUBLIC_TEST_TYPES=${TEST_TYPES:-功能,性能,健壮性,稳定性}
+    volumes:
+      - ./backend/public/uploads:/app/backend/public/uploads
+
+volumes:
+  postgres-data:
