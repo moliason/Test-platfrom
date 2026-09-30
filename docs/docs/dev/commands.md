@@ -4,8 +4,8 @@ sidebar_position: 2
 
 # Commands
 
-Following commands are useful for unittcms development.
-(Setting up a server directly from source, please refer to the following link: [Running UnitTCMS from Source](../getstarted/from-source.md))
+Following commands are useful for Test-platfrom development.
+(Setting up a server directly from source, please refer to the following link: [Running Test-platfrom from Source](../getstarted/from-source.md))
 
 ## Frontend
 

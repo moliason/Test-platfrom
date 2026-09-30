@@ -7,7 +7,7 @@ import { AdminMessages } from '@/types/user';
 export async function generateMetadata({ params: { locale } }: { params: { locale: LocaleCodeType } }) {
   const t = await getTranslations({ locale, namespace: 'Admin' });
   return {
-    title: `${t('user_management')} | UnitTCMS`,
+    title: `${t('user_management')} | Test-platfrom`,
     robots: { index: false, follow: false },
   };
 }

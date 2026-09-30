@@ -20,7 +20,7 @@ export type HomeMessages = {
 export async function generateMetadata({ params: { locale } }: { params: { locale: LocaleCodeType } }) {
   const t = await getTranslations({ locale, namespace: 'Home' });
   return {
-    title: `${t('home')} | UnitTCMS`,
+    title: `${t('home')} | Test-platfrom`,
     robots: { index: false, follow: false },
   };
 }

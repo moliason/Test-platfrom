@@ -7,7 +7,7 @@ import { fetchSSOEnabled } from '@/utils/ssoAvailable';
 export async function generateMetadata({ params: { locale } }: { params: { locale: LocaleCodeType } }) {
   const t = await getTranslations({ locale, namespace: 'Auth' });
   return {
-    title: `${t('signin')} | UnitTCMS`,
+    title: `${t('signin')} | Test-platfrom`,
     robots: { index: false, follow: false },
   };
 }

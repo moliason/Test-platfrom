@@ -53,7 +53,7 @@
     "oss_tcms": "Open Source Testfall-Management-System",
     "integrate_and_manage": "Integriere und verwalte alle Softwaretests.",
     "oss_title": "Open Source",
-    "oss_detail": "UnitTCMS ist kostenlos und Open Source. Die Anwendung kann selbst gehostet werden und ist für Umgebungen mit hohen Sicherheitsanforderungen geeignet.",
+    "oss_detail": "Test-platfrom ist kostenlos und Open Source. Die Anwendung kann selbst gehostet werden und ist für Umgebungen mit hohen Sicherheitsanforderungen geeignet.",
     "organize_title": "Testfälle organisieren",
     "organize_detail": "Testfälle können nach Projekten und Ordnern organisiert werden. Das moderne UI macht sie schnell.",
     "usability_title": "Benutzbarkeit",
@@ -147,7 +147,7 @@
     "ok": "OK",
     "error": "Error",
     "api_server": "API Server",
-    "unittcms_version": "UnitTCMS Version"
+    "unittcms_version": "Test-platfrom Version"
   },
   "Admin": {
     "user_management": "Benutzerverwaltung",

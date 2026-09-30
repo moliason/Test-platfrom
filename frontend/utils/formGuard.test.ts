@@ -81,7 +81,7 @@ describe('useFormGuard', () => {
     });
   });
 
-  describe('UnitTCMS use case', () => {
+  describe('Test-platfrom use case', () => {
     it('does not show confirm when navigating to case detail page of test run', () => {
       const projectId = '1';
       const runId = '2';

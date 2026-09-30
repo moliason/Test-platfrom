@@ -6,13 +6,13 @@ sidebar_position: 2
 
 ## Database backup
 
-UnitTCMS uses SQLite for data persistence. Therefore, backing up the database is simply backing up the SQLite DB file.
+Test-platfrom uses PostgreSQL for data persistence. Use PostgreSQL backup tools such as `pg_dump` to create a database backup.
 
-Please back up the file `backend/database/database.sqlite`.
+Keep database backups separate from the live database and verify that they can be restored.
 
 :::note[In Docker environment]
 
-In a docker environment, DB file is stored in a Docker named volume (`db-data`).
+In the included Docker Compose environment, PostgreSQL stores data in the `postgres-data` named volume.
 
 :::
 

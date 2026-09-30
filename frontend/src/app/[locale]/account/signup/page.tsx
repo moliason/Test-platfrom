@@ -4,7 +4,7 @@ import { redirect } from '@/src/i18n/routing';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: LocaleCodeType } }) {
   return {
-    title: 'Sign up disabled | UnitTCMS',
+    title: 'Sign up disabled | Test-platfrom',
     robots: { index: false, follow: false },
   };
 }

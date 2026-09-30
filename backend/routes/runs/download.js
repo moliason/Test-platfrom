@@ -58,7 +58,7 @@ export default function (sequelize) {
         ]);
 
         const workbook = new ExcelJS.Workbook();
-        workbook.creator = 'UnitTCMS';
+        workbook.creator = 'Test-platfrom';
         workbook.title = '系统测试报告';
         workbook.subject = '测试运行报告';
         workbook.created = new Date();

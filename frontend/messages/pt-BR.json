@@ -53,7 +53,7 @@
     "oss_tcms": "Sistema de Gerenciamento de Casos de Teste de Código Aberto",
     "integrate_and_manage": "Integre e gerencie todos os seus testes de software.",
     "oss_title": "Código Aberto",
-    "oss_detail": "O UnitTCMS é gratuito e de código aberto. A aplicação pode ser auto-hospedada. Pode ser implantada em ambientes com requisitos de segurança rigorosos.",
+    "oss_detail": "O Test-platfrom é gratuito e de código aberto. A aplicação pode ser auto-hospedada. Pode ser implantada em ambientes com requisitos de segurança rigorosos.",
     "organize_title": "Organize Casos de Teste",
     "organize_detail": "Os casos de teste podem ser organizados por projetos e pastas. A estrutura de UI moderna os torna rápidos.",
     "usability_title": "Usabilidade",
@@ -147,7 +147,7 @@
     "ok": "OK",
     "error": "Erro",
     "api_server": "Servidor da API",
-    "unittcms_version": "Versão do UnitTCMS"
+    "unittcms_version": "Versão do Test-platfrom"
   },
   "Admin": {
     "user_management": "Gerenciamento de Usuários",

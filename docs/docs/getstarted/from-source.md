@@ -2,9 +2,9 @@
 sidebar_position: 3
 ---
 
-# Running UnitTCMS from Source
+# Running Test-platfrom from Source
 
-While using Docker is the recommended and easiest way to run UnitTCMS, this chapter explains how to run it directly from source. This approach is useful for those who cannot use Docker or are interested in contributing to UnitTCMS development. Since the frontend and backend are completely decoupled, this setup also supports more advanced use cases — such as serving the frontend via AWS S3 + CloudFront, or replacing the default SQLite database with another backend solution.
+This chapter explains how to run Test-platfrom directly from source. The frontend and backend run separately and require a PostgreSQL database.
 
 :::info[Prerequisite]
 
@@ -12,12 +12,12 @@ Prerequisite: v22 or higher node must be installed.
 
 :::
 
-To use UnitTCMS, you need to run both frontend server and backend(API) server.
+To use Test-platfrom, you need to run both frontend server and backend(API) server.
 
 First, clone the repository.
 
 ```bash
-git clone https://github.com/kimatata/unittcms.git
+git clone https://github.com/moliason/Test-platfrom.git
 ```
 
 ## Run backend server

@@ -8,7 +8,7 @@ import { SettingsMessages } from '@/types/settings';
 export async function generateMetadata({ params: { locale } }: { params: { locale: LocaleCodeType } }) {
   const t = await getTranslations({ locale, namespace: 'Settings' });
   return {
-    title: `${t('project_management')} | UnitTCMS`,
+    title: `${t('project_management')} | Test-platfrom`,
     robots: { index: false, follow: false },
   };
 }

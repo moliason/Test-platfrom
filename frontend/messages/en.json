@@ -53,7 +53,7 @@
     "oss_tcms": "Open Source Test Case Management System",
     "integrate_and_manage": "Integrate and manage all your software testing.",
     "oss_title": "Open Source",
-    "oss_detail": "UnitTCMS is free and open source. The application can be self-hosted. It can be deployed in environments with strict security requirements.",
+    "oss_detail": "Test-platfrom is free and open source. The application can be self-hosted. It can be deployed in environments with strict security requirements.",
     "organize_title": "Organize Test Cases",
     "organize_detail": "Test cases can be organized by projects and folders. Modern UI framework makes them fast.",
     "usability_title": "Usability",
@@ -147,7 +147,7 @@
     "ok": "OK",
     "error": "Error",
     "api_server": "API Server",
-    "unittcms_version": "UnitTCMS Version"
+    "unittcms_version": "Test-platfrom Version"
   },
   "Admin": {
     "user_management": "User Management",

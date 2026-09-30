@@ -12,14 +12,14 @@ export default function Home() {
       <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
           <Heading as="h1" className="hero__title">
-            UnitTCMS Docs
+            Test-platfrom Docs
           </Heading>
           <p className="hero__subtitle">Open Source Test Case Management System</p>
           <div className={styles.buttons}>
             <Link className="button button--primary button--lg" to="/docs">
               Docs📰
             </Link>
-            <Link className="button button--secondary button--lg" to="https://github.com/kimatata/unittcms">
+            <Link className="button button--secondary button--lg" to="https://github.com/moliason/Test-platfrom">
               GitHub
             </Link>
           </div>

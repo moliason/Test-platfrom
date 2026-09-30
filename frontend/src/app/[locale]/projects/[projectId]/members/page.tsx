@@ -6,7 +6,7 @@ import { LocaleCodeType } from '@/types/locale';
 export async function generateMetadata({ params: { locale } }: { params: { locale: LocaleCodeType } }) {
   const t = await getTranslations({ locale, namespace: 'Members' });
   return {
-    title: `${t('member_management')} | UnitTCMS`,
+    title: `${t('member_management')} | Test-platfrom`,
     robots: { index: false, follow: false },
   };
 }

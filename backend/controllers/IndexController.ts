@@ -10,7 +10,7 @@ export class IndexController {
   @Get('/')
   public async getIndex(): Promise<{ message: string }> {
     return {
-      message: 'Welcome to the UnitTCMS API!',
+      message: 'Welcome to the Test-platfrom API!',
     };
   }
 }

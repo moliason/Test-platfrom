@@ -4,7 +4,7 @@ import { LocaleCodeType } from '@/types/locale';
 export async function generateMetadata({ params: { locale } }: { params: { locale: LocaleCodeType } }) {
   const t = await getTranslations({ locale, namespace: 'Projects' });
   return {
-    title: `${t('project_list')} | UnitTCMS`,
+    title: `${t('project_list')} | Test-platfrom`,
     robots: { index: false, follow: false },
   };
 }

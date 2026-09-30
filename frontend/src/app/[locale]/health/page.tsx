@@ -8,7 +8,7 @@ import { HealthMessages } from '@/types/health';
 export async function generateMetadata({ params: { locale } }: { params: { locale: LocaleCodeType } }) {
   const t = await getTranslations({ locale, namespace: 'Health' });
   return {
-    title: `${t('health_check')} | UnitTCMS`,
+    title: `${t('health_check')} | Test-platfrom`,
     robots: { index: false, follow: false },
   };
 }

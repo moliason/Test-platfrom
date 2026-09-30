@@ -16,10 +16,10 @@ export default function MainTitle({ locale }: Props) {
       <h1
         className={title({
           color: 'green',
-          class: 'lg:text-7xl md:text-7xl sm:text-7xl text-7xl',
+          class: 'text-3xl tracking-normal break-words',
         })}
       >
-        UnitTCMS
+        Test-platfrom
       </h1>
       <br />
       <br />
@@ -41,7 +41,7 @@ export default function MainTitle({ locale }: Props) {
           showAnchorIcon
           as={NextUiLink}
           isExternal
-          href="https://kimatata.github.io/unittcms/docs/getstarted/selfhost"
+          href="https://github.com/moliason/Test-platfrom/blob/main/docs/docs/getstarted/selfhost.md"
           aria-label="docs"
           color="primary"
           variant="bordered"
@@ -55,7 +55,7 @@ export default function MainTitle({ locale }: Props) {
           showAnchorIcon
           as={NextUiLink}
           isExternal
-          href="https://github.com/kimatata/unittcms"
+          href="https://github.com/moliason/Test-platfrom"
           aria-label="Github"
           color="primary"
           variant="bordered"

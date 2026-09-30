@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Technologies
 
-UnitTCMS is powered by following technologies. For more detailed info, please check package.json.
+Test-platfrom is powered by following technologies. For more detailed info, please check package.json.
 
 ## Frontend
 

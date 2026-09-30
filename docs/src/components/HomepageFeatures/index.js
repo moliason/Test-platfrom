@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/certificate-svgrepo-com.svg').default,
     description: (
       <>
-        UnitTCMS is free and open source. The application can be self-hosted. It can be deployed in environments with
+        Test-platfrom is free and open source. The application can be self-hosted. It can be deployed in environments with
         strict security requirements.
       </>
     ),

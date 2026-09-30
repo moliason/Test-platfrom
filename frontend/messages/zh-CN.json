@@ -53,7 +53,7 @@
     "oss_tcms": "开源测试用例管理系统",
     "integrate_and_manage": "集成并管理您的所有软件测试。",
     "oss_title": "开源",
-    "oss_detail": "UnitTCMS 是免费且开源的。应用程序支持自托管，可部署在有严格安全要求的环境中。",
+    "oss_detail": "Test-platfrom 是免费且开源的。应用程序支持自托管，可部署在有严格安全要求的环境中。",
     "organize_title": "组织测试用例",
     "organize_detail": "可以通过项目和文件夹来组织测试用例。现代化的 UI 框架使其运行迅速。",
     "usability_title": "易用性",
@@ -147,7 +147,7 @@
     "ok": "正常",
     "error": "错误",
     "api_server": "API 服务器",
-    "unittcms_version": "UnitTCMS 版本"
+    "unittcms_version": "Test-platfrom 版本"
   },
   "Admin": {
     "user_management": "用户管理",

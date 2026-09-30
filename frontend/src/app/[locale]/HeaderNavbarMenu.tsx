@@ -60,13 +60,13 @@ export default function HeaderNavbarMenu({ messages, locale }: Props) {
     commonLinks.push(
       {
         uid: 'docs',
-        href: 'https://kimatata.github.io/unittcms/docs/getstarted/selfhost',
+        href: 'https://github.com/moliason/Test-platfrom/blob/main/docs/docs/getstarted/selfhost.md',
         label: messages.docs,
         isExternal: true,
       },
       {
         uid: 'roadmap',
-        href: 'https://kimatata.github.io/unittcms/docs/roadmap/',
+        href: 'https://github.com/moliason/Test-platfrom/issues',
         label: messages.roadmap,
         isExternal: true,
       }
@@ -91,9 +91,9 @@ export default function HeaderNavbarMenu({ messages, locale }: Props) {
     <Navbar isMenuOpen={isMenuOpen} maxWidth="full" position="sticky" className="bg-inherit">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <Link className="flex justify-start items-center gap-1" href="/" locale={locale}>
-            <Image src="/favicon/icon-192.png" width={32} height={32} alt="Logo" />
-            <p className="font-bold text-inherit ms-1">UnitTCMS</p>
+          <Link className="flex shrink-0 justify-start items-center gap-1" href="/" locale={locale}>
+            <Image src="/favicon/test-platfrom.svg" width={32} height={32} alt="Test-platfrom" className="shrink-0" />
+            <p className="font-bold text-inherit ms-1 whitespace-nowrap">Test-platfrom</p>
           </Link>
         </NavbarBrand>
         {commonLinks.map((link) =>

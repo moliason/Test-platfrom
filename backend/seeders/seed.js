@@ -83,8 +83,8 @@ export async function up(queryInterface) {
   // Add projects table records
   await queryInterface.bulkInsert('projects', [
     {
-      name: 'UnitTCMS Test',
-      detail: "Test Plat's Manual test",
+      name: 'Test-platfrom Test',
+      detail: "Test-platfrom manual tests",
       userId: 1,
       isPublic: true,
       createdAt: new Date(2024, 5, 4),

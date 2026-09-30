@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Test-platfrom</title>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="#17191C"/>
+  <path d="M14 16H42V24H32V48H24V24H14V16Z" fill="#FFFFFF"/>
+  <path d="M38 39L44 45L54 32" stroke="#2DD4BF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

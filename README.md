@@ -1,92 +1,63 @@
 <p align="center">
-  <a href="https://www.unittcms.org/en">
-    <img width="20%" src="https://raw.githubusercontent.com/kimatata/unittcms/refs/heads/main/frontend/public/favicon/icon-192.png" alt="UnitTCMS" />
-    <h1 align="center">UnitTCMS</h1>
-  </a>
-</p>
-</br>
-<p align="center">
-  <a href="https://github.com/kimatata/unittcms/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/kimatata/unittcms" alt="License">
-  </a>
-  <a href="https://github.com/kimatata/unittcms/releases">
-    <img src="https://img.shields.io/github/v/release/kimatata/unittcms" alt="Release">
-  </a>
+  <img src="./frontend/public/favicon/test-platfrom.svg" width="96" height="96" alt="Test-platfrom" />
 </p>
 
-UnitTCMS is an open source test case management system. The application is free and designed for self-hosted use. It can be used in environments with strict security requirements. For more information, please visit the demo site and docs.
+<h1 align="center">Test-platfrom</h1>
 
-[🧪Demo](https://www.unittcms.org)
+<p align="center">测试用例管理与测试执行平台</p>
 
-[📘Docs](https://kimatata.github.io/unittcms/docs)
+Test-platfrom 支持按项目管理测试用例、组织测试运行、记录执行结果和导出测试报告，适合团队自托管使用。
 
-## Getting Started
+## 主要功能
+
+- 按项目和文件夹组织用例，通过树形目录查看用例详情。
+- 导入 Excel 测试用例，同名用例更新，步骤与预期结果按序号对应。
+- 从用例库创建测试运行，或加入已有运行集。
+- 分配负责人、记录状态和评论，查看测试进度。
+- 按文件夹导出多 Sheet 的 Excel 系统测试报告。
+- 管理账号、项目成员和角色权限，维护项目专属用例类型。
+- 支持中文界面、PostgreSQL 数据库和可选的 OIDC 单点登录。
+
+## 界面预览
+
+### 用例详情
+
+左侧按文件夹查看测试用例，右侧展示前置条件、操作步骤、预期结果与附件。
+
+![测试用例目录与步骤详情](./docs/images/test-case-details.png)
+
+### 批量选择用例
+
+勾选多个测试用例后，可以创建运行或加入已有运行集。
+
+![批量选择测试用例并创建或加入运行](./docs/images/test-case-selection.png)
+
+### 测试运行
+
+查看运行进度、管理运行状态，并按文件夹浏览本次运行中的测试用例。
+
+![测试运行进度与运行用例列表](./docs/images/test-run.png)
+
+## 快速开始
 
 ```bash
-git clone https://github.com/kimatata/unittcms.git
+git clone https://github.com/moliason/Test-platfrom.git
+cd Test-platfrom
+docker compose up --build
 ```
 
-and start containers with the following command.
+启动后访问 [本地页面](http://localhost:8000/zh-CN/account/signin)。
 
-```bash
-cd unittcms
-docker-compose up --build
-```
+首次使用可通过 Compose 的 `ADMIN_USERNAME`、`ADMIN_EMAIL`、`ADMIN_PASSWORD` 配置管理员。对外部署前请修改默认密码、数据库密码和 `SECRET_KEY`；不要把实际凭据提交到仓库。
 
-You can access the app at `http://localhost:8000`
+- [本地源码启动](./docs/docs/getstarted/from-source.md)
+- [环境变量配置](./docs/docs/getstarted/environment.md)
+- [OIDC 配置](./docs/docs/getstarted/oidc.md)
+- [提交问题](https://github.com/moliason/Test-platfrom/issues)
+- [参与贡献](./CONTRIBUTING.md)
 
-[Looking for a non-Docker way?](https://kimatata.github.io/unittcms/docs/getstarted/from-source)
+## 许可证与来源
 
-## Why UnitTCMS
+项目基于 [UnitTCMS](https://github.com/kimatata/unittcms) 开发，保留上游版权声明：Copyright © 2024-present UnitTCMS。
 
-There are many test case management tools available in the market, which can be categorized into proprietary and open-source solutions.
-
-Proprietary tools often come with modern, user-friendly interfaces but tend to be cloud-based, which may raise security concerns for some organizations. While some of them do offer on-premises options, these tend to be significantly more expensive.
-
-There are also open-source tools, but many feature older user interfaces that involve frequent full page reloads, which can hinder usability.
-
-With these challenges in mind, I set out to develop a modern, user-friendly, open-source test case management tool that anyone can use for free in a secure, self-hosted environment.
-
-## Features
-
-### Project-Based
-
-Manage test cases and test runs on a project-by-project basis. Our dashboard provides an at-a-glance view of the types of test cases and their progress for each project. This allows you to monitor project status in real-time and manage efficiently.
-
-![Project-Based](./frontend/public/top/light/project.png)
-
-<hr />
-
-### Test case management
-
-Create folders within projects and define test cases with ease using our modern and intuitive UI. Attaching files enables detailed explanations of test cases, making it easy to share information across the entire team.
-
-![Test Case Management](./frontend/public/top/light/case.png)
-
-<hr />
-
-### Test run management
-
-Defined test cases can be reused multiple times in test runs, enabling efficient test cycles. Additionally, you can visually monitor the status of test runs and projects.
-
-![Test Run Management](./frontend/public/top/light/run.png)
-
-<hr />
-
-### Project member management
-
-Support team development by adding or removing members from projects. You can assign roles and set permissions for each member in detail. We provide three main roles: 'Manager' who manages the entire project, 'Developer' who designs the tests, and 'Reporter' who executes the tests.
-
-![Member Management](./frontend/public/top/light/member.png)
-
-## Supported Languages
-
-UnitTCMS currently supports the following languages:
-
-- German (de)
-- English (en)
-- Portuguese (pt-BR)
-- Chinese (zh-CN)
-- Japanese (ja)
-
-If you would like to add support for another language, feel free to submit a pull request. For reference, you can see how Portuguese was added in [PR #260](https://github.com/kimatata/unittcms/pull/260).
+代码遵循 [GPL-3.0](./LICENSE) 许可证。Test-platfrom 为本项目的展示名称，不改变上游代码的许可和归属。

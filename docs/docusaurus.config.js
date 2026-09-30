@@ -8,20 +8,20 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'UnitTCMS',
+  title: 'Test-platfrom',
   // tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://kimatata.github.io',
+  url: 'https://moliason.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/unittcms/',
+  baseUrl: '/Test-platfrom/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'kimatata', // Usually your GitHub org/user name.
-  projectName: 'unittcms', // Usually your repo name.
+  organizationName: 'moliason', // Usually your GitHub org/user name.
+  projectName: 'Test-platfrom', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -43,7 +43,7 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/moliason/Test-platfrom/edit/main/docs/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -61,18 +61,18 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/icon-192.png',
       navbar: {
-        title: 'UnitTCMS',
+        title: 'Test-platfrom',
         logo: {
-          alt: 'UnitTCMS Logo',
+          alt: 'Test-platfrom Logo',
           src: 'img/icon-192.png',
         },
         items: [{ to: '/docs', label: 'Docs', position: 'left' }],
       },
       footer: {
         style: 'light',
-        copyright: `Copyright © ${new Date().getFullYear()} UnitTCMS. Built with Docusaurus.`,
+        copyright: 'Test-platfrom | Documentation',
       },
       prism: {
         theme: prismThemes.github,

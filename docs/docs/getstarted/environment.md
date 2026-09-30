@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Override settings
 
-UnitTCMS will work with the default settings, but you can override them as needed.
+Test-platfrom will work with the default settings, but you can override them as needed.
 
 :::warning[Strongly Recommended]
 
@@ -14,7 +14,7 @@ It is strongly recommended to change `SECRET_KEY` from the default value in prod
 
 ## Docker
 
-If you are self-hosting UnitTCMS with Docker, you can customize the environment using the `environment` section in `docker-compose.yaml`.
+If you are self-hosting Test-platfrom with Docker, you can customize the environment using the `environment` section in `docker-compose.yaml`.
 
 ```yaml title="docker-compose.yaml"
 services:
@@ -29,18 +29,15 @@ services:
       - SECRET_KEY=your_secret_key_here
       - IS_DEMO=false # set to true to seed the database
       - API_PATH=/api
-      - DATABASE_PATH=/app/backend/database/database.sqlite
+      - DATABASE_URL=postgres://unittcms:change-this-password@postgres:5432/unittcms
     // highlight-end
-    volumes:
-      - db-data:/app/backend/database
-
-volumes:
-  db-data:
 ```
+
+Keep the existing `postgres` service and `postgres-data` volume from the repository's Compose file. The database URL must match that service's database, user, and password.
 
 ## From Source
 
-If you are self-hosting UnitTCMS from source, you can override the environment by placing `.env` files in the appropriate directory.
+If you are self-hosting Test-platfrom from source, you can override the environment by placing `.env` files in the appropriate directory.
 
 ### Setting frontend environment variables
 

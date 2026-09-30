@@ -2,18 +2,18 @@
 sidebar_position: 2
 ---
 
-# Running UnitTCMS with Docker
+# Running Test-platfrom with Docker
 
 First, clone the repository.
 
 ```bash
-git clone https://github.com/kimatata/unittcms.git
+git clone https://github.com/moliason/Test-platfrom.git
 ```
 
 and start container with the following command.
 
 ```bash
-cd unittcms
+cd Test-platfrom
 docker-compose up --build
 ```
 
