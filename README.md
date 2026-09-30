@@ -4,41 +4,43 @@
 
 <h1 align="center">Test-platfrom</h1>
 
-<p align="center">测试用例管理与测试执行平台</p>
+<p align="center">Test Case Management and Test Execution Platform</p>
 
-Test-platfrom 支持按项目管理测试用例、组织测试运行、记录执行结果和导出测试报告，适合团队自托管使用。
+Test-platfrom builds on UnitTCMS with extensive user experience improvements, including tree-based case navigation, streamlined test-run workflows, and asynchronous updates that reduce full-page reloads.
 
-## 主要功能
+Designed for self-hosted teams, it brings project-based test case management, test execution, result tracking, and report generation into one platform.
 
-- 按项目和文件夹组织用例，通过树形目录查看用例详情。
-- 导入 Excel 测试用例，同名用例更新，步骤与预期结果按序号对应。
-- 从用例库创建测试运行，或加入已有运行集。
-- 分配负责人、记录状态和评论，查看测试进度。
-- 按文件夹导出多 Sheet 的 Excel 系统测试报告。
-- 管理账号、项目成员和角色权限，维护项目专属用例类型。
-- 支持中文界面、PostgreSQL 数据库和可选的 OIDC 单点登录。
+## Key Features
 
-## 界面预览
+- Organize test cases by project and folder, with a tree view for navigating case details.
+- Import Excel test cases, update cases with matching titles, and align steps with expected results by number.
+- Create test runs from selected cases or add them to existing runs.
+- Assign owners, record statuses and comments, and track testing progress.
+- Export Excel test reports with a separate worksheet for each folder.
+- Manage accounts, project members, role-based permissions, and project-specific test case types.
+- Use a multilingual interface, PostgreSQL storage, and optional OIDC single sign-on.
 
-### 用例详情
+## Screenshots
 
-左侧按文件夹查看测试用例，右侧展示前置条件、操作步骤、预期结果与附件。
+### Test Case Details
 
-![测试用例目录与步骤详情](./docs/images/test-case-details.png)
+Browse cases by folder on the left and view preconditions, test steps, expected results, and attachments on the right.
 
-### 批量选择用例
+![Test case tree and step details](./docs/images/test-case-details.png)
 
-勾选多个测试用例后，可以创建运行或加入已有运行集。
+### Bulk Case Selection
 
-![批量选择测试用例并创建或加入运行](./docs/images/test-case-selection.png)
+Select multiple test cases to create a new run or add them to an existing run.
 
-### 测试运行
+![Selecting multiple test cases to create or join a run](./docs/images/test-case-selection.png)
 
-查看运行进度、管理运行状态，并按文件夹浏览本次运行中的测试用例。
+### Test Runs
 
-![测试运行进度与运行用例列表](./docs/images/test-run.png)
+Track execution progress, manage run status, and browse the cases included in a run by folder.
 
-## 快速开始
+![Test run progress and included test cases](./docs/images/test-run.png)
+
+## Getting Started
 
 ```bash
 git clone https://github.com/moliason/Test-platfrom.git
@@ -46,18 +48,18 @@ cd Test-platfrom
 docker compose up --build
 ```
 
-启动后访问 [本地页面](http://localhost:8000/zh-CN/account/signin)。
+Once the application is running, open the [local sign-in page](http://localhost:8000/zh-CN/account/signin).
 
-首次使用可通过 Compose 的 `ADMIN_USERNAME`、`ADMIN_EMAIL`、`ADMIN_PASSWORD` 配置管理员。对外部署前请修改默认密码、数据库密码和 `SECRET_KEY`；不要把实际凭据提交到仓库。
+Configure the initial administrator using `ADMIN_USERNAME`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD` in the Compose environment. Before exposing the application, change the default administrator password, database password, and `SECRET_KEY`. Never commit real credentials to the repository.
 
-- [本地源码启动](./docs/docs/getstarted/from-source.md)
-- [环境变量配置](./docs/docs/getstarted/environment.md)
-- [OIDC 配置](./docs/docs/getstarted/oidc.md)
-- [提交问题](https://github.com/moliason/Test-platfrom/issues)
-- [参与贡献](./CONTRIBUTING.md)
+- [Running from Source](./docs/docs/getstarted/from-source.md)
+- [Environment Configuration](./docs/docs/getstarted/environment.md)
+- [OIDC Configuration](./docs/docs/getstarted/oidc.md)
+- [Report an Issue](https://github.com/moliason/Test-platfrom/issues)
+- [Contributing](./CONTRIBUTING.md)
 
-## 许可证与来源
+## License and Attribution
 
-项目基于 [UnitTCMS](https://github.com/kimatata/unittcms) 开发，保留上游版权声明：Copyright © 2024-present UnitTCMS。
+This project is based on [UnitTCMS](https://github.com/kimatata/unittcms) and retains its upstream copyright notice: Copyright © 2024-present UnitTCMS.
 
-代码遵循 [GPL-3.0](./LICENSE) 许可证。Test-platfrom 为本项目的展示名称，不改变上游代码的许可和归属。
+The code is licensed under [GPL-3.0](./LICENSE). Test-platfrom is this project's display name; it does not change the license or attribution of the upstream code.
